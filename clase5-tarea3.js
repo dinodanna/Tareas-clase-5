@@ -49,18 +49,19 @@ $botonCalcular.onclick = function () {
     }
     for (i = 0; i < segundosClases.length; i++) {
         totalSegundos += Number(segundosClases[i].value);
-        for (i = 60; i <= totalSegundos; i) {
+        if (totalSegundos >= 60) {
             totalMinutos++;
             totalSegundos -= 60;
         }
     }
     for (i = 0; i < minutosClases.length; i++) {
         totalMinutos += Number(minutosClases[i].value);
-        for (i = 60; i <= totalMinutos; i) {
+        if (totalMinutos >= 60) {
             totalHoras++;
             totalMinutos -= 60;
         }
     }
+
     document.querySelector("#calculo-total").value =
         "El tiempo total de las clases es " +
         totalHoras +
