@@ -1,0 +1,58 @@
+input[type=text]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+  }
+  
+input[type=number]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    box-align: center;
+    background-color: rgb(236, 236, 236);
+  }
+  
+ input[type=button] {
+    width: 50%;
+    background-color: #c02929;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  input[type=button]:hover {
+    background-color: #d86b12;
+  }
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    font-style: oblique;
+    color: rgb(113, 112, 167);
+}
+
+main { 
+    text-align: center;
+}
+
+body{
+    background-color: rgb(204, 204, 204);
+}
+
+div {
+    text-align: center;
+}
