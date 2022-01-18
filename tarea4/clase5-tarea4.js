@@ -7,27 +7,32 @@
 // 4. obtener el número que más se repite y mostrarlo en un <em> pre-creado con el texto "El número más frecuente es..."
 
 const listaDeNumeros = document.querySelectorAll("li");
+let arrayDeNumeros = [];
 
-// 1.
+for (i = 0; i < listaDeNumeros.length; i++) {
+    arrayDeNumeros.push(listaDeNumeros[i].innerText);
+}
+
+// 1
 
 document.querySelector("#promedio").innerText =
-    "El promedio es: " + calcularPromedio(listaDeNumeros);
+    "El promedio es: " + calcularPromedio(arrayDeNumeros);
 
 function calcularPromedio(array) {
     sumaDeNumeros = 0;
-    for (i = 0; i < listaDeNumeros.length; i++) {
-        sumaDeNumeros += Number(listaDeNumeros[i].innerText);
+    for (i = 0; i < arrayDeNumeros.length; i++) {
+        sumaDeNumeros += Number(arrayDeNumeros[i]);
     }
-    promedioDeNumeros = sumaDeNumeros / listaDeNumeros.length;
+    promedioDeNumeros = sumaDeNumeros / arrayDeNumeros.length;
     return promedioDeNumeros;
 }
 
 // 2.
 
-numeroMayor = Number(listaDeNumeros[0].innerText);
-for (i = 0; i < listaDeNumeros.length; i++) {
-    if (numeroMayor < Number(listaDeNumeros[i].innerText)) {
-        numeroMayor = Number(listaDeNumeros[i].innerText);
+numeroMayor = Number(arrayDeNumeros[0]);
+for (i = 0; i < arrayDeNumeros.length; i++) {
+    if (numeroMayor < Number(arrayDeNumeros[i])) {
+        numeroMayor = Number(arrayDeNumeros[i]);
     }
 }
 
@@ -36,10 +41,10 @@ document.querySelector("#numero-mayor").innerText =
 
 //3
 
-numeroMenor = Number(listaDeNumeros[0].innerText);
-for (i = 0; i < listaDeNumeros.length; i++) {
-    if (numeroMenor > Number(listaDeNumeros[i].innerText)) {
-        numeroMenor = Number(listaDeNumeros[i].innerText);
+numeroMenor = Number(arrayDeNumeros[0]);
+for (i = 0; i < arrayDeNumeros.length; i++) {
+    if (numeroMenor > Number(arrayDeNumeros[i])) {
+        numeroMenor = Number(arrayDeNumeros[i]);
     }
 }
 
@@ -51,14 +56,14 @@ let numeroMasRepetido;
 let contador = 0;
 let contadorMaximo = 0;
 
-for (i = 0; i < listaDeNumeros.length; i++) {
-    for (j = 0; j < listaDeNumeros.length; j++) {
-        if (listaDeNumeros[i].innerText === listaDeNumeros[j].innerText) {
+for (i = 0; i < arrayDeNumeros.length; i++) {
+    for (j = 0; j < arrayDeNumeros.length; j++) {
+        if (arrayDeNumeros[i] === arrayDeNumeros[j]) {
             contador++;
         }
         if (contador > contadorMaximo) {
             contadorMaximo = contador;
-            numeroMasRepetido = Number(listaDeNumeros[i].innerText);
+            numeroMasRepetido = Number(arrayDeNumeros[i]);
         }
     }
     contador = 0;
